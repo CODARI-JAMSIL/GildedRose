@@ -8,7 +8,14 @@ public class GildedRoseTest {
 
 	@Test
 	public void test() {
-//		fail("Not yet implemented");
+
+		Item[] items = new Item[] {};
+		GildedRose gildedRose = new GildedRose(items );
+		
+		gildedRose.updateQuality();
+		
+		assertEquals(0, items.length);
+		
 	}
 
 }
