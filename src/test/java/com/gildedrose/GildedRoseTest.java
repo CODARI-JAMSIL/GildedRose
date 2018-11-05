@@ -99,6 +99,30 @@ public class GildedRoseTest {
 	}
 
 	@Test
+	public void AgedBrie아이템_판매기간2_품질0_테스트() {
+		Item[] items = new Item[] { new Item(AGED_BRIE, 2, 0) };
+		GildedRose gildedRose = new GildedRose(items);
+
+		gildedRose.updateQuality();
+
+		assertEquals(AGED_BRIE, items[0].name);
+		assertEquals(1, items[0].sellIn);
+		assertEquals(1, items[0].quality);
+	}
+
+	@Test
+	public void Normal아이템_판매기간2_품질0_테스트() {
+		Item[] items = new Item[] { new Item(NORMAL_ITEM, 2, 0) };
+		GildedRose gildedRose = new GildedRose(items);
+
+		gildedRose.updateQuality();
+
+		assertEquals(NORMAL_ITEM, items[0].name);
+		assertEquals(1, items[0].sellIn);
+		assertEquals(0, items[0].quality);
+	}
+
+	@Test
 	public void GildedRose_Item_toString_테스트() {
 		Item[] items = new Item[] { new Item(NORMAL_ITEM, 0, 0) };
 		GildedRose gildedRose = new GildedRose(items);
