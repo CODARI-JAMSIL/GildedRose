@@ -13,20 +13,28 @@ public class GildedRoseTest {
 
 	@Test
 	public void GildedRose_생성자_테스트() {
+		
+		// arrange (given)
 		Item[] items = new Item[] {};
 
+		// act (when)
 		GildedRose gildedRose = new GildedRose(items);
 
+		// assert (then)
 		assertNotNull(gildedRose);
 	}
 
 	@Test
 	public void Normal아이템_판매기간0_품질0_테스트() {
+		
+		// arrange (given)
 		Item[] items = new Item[] { new Item(NORMAL_ITEM, 0, 0) };
 		GildedRose gildedRose = new GildedRose(items);
 
+		// act (when)
 		gildedRose.updateQuality();
 
+		// assert (then)
 		assertEquals(NORMAL_ITEM, items[0].name);
 		assertEquals(-1, items[0].sellIn);
 		assertEquals(0, items[0].quality);
@@ -34,11 +42,15 @@ public class GildedRoseTest {
 
 	@Test
 	public void Normal아이템_판매기간0_품질5_테스트() {
+		
+		// arrange (given)
 		Item[] items = new Item[] { new Item(NORMAL_ITEM, 0, 5) };
 		GildedRose gildedRose = new GildedRose(items);
 
+		// act (when)
 		gildedRose.updateQuality();
 
+		// assert (then)
 		assertEquals(NORMAL_ITEM, items[0].name);
 		assertEquals(-1, items[0].sellIn);
 		assertEquals(3, items[0].quality);
@@ -46,11 +58,15 @@ public class GildedRoseTest {
 
 	@Test
 	public void Sulfuras아이템_판매기간0_품질5_테스트() {
+		
+		// arrange (given)
 		Item[] items = new Item[] { new Item(SULFURAS, 0, 5) };
 		GildedRose gildedRose = new GildedRose(items);
 
+		// act (when)
 		gildedRose.updateQuality();
 
+		// assert (then)
 		assertEquals(SULFURAS, items[0].name);
 		assertEquals(0, items[0].sellIn);
 		assertEquals(5, items[0].quality);
@@ -58,11 +74,15 @@ public class GildedRoseTest {
 
 	@Test
 	public void AgedBrie아이템_판매기간0_품질0_테스트() {
+		
+		// arrange (given)
 		Item[] items = new Item[] { new Item(AGED_BRIE, 0, 0) };
 		GildedRose gildedRose = new GildedRose(items);
 
+		// act (when)
 		gildedRose.updateQuality();
 
+		// assert (then)
 		assertEquals(AGED_BRIE, items[0].name);
 		assertEquals(-1, items[0].sellIn);
 		assertEquals(2, items[0].quality);
@@ -70,41 +90,95 @@ public class GildedRoseTest {
 
 	@Test
 	public void BackstagePass아이템_판매기간0_품질0_테스트() {
+		
+		fail(); // 삭제
+		
 		// 같이 해보기
+		// arrange (given)
+		
+		// act (when)
+		
+		// assert (then)
+		
 	}
 
 	@Test
 	public void BackstagePass아이템_판매기간0_품질51_테스트() {
-
+		
+		fail();  // 삭제
+		
+		// 같이 해보기
+		// arrange (given)
+				
+		// act (when)
+				
+		// assert (then)
+		
 	}
 
 	@Test
 	public void BackstagePass아이템_판매기간15_품질0_테스트() {
-
+		
+		fail();  // 삭제
+		
+		// 같이 해보기
+		// arrange (given)
+				
+		// act (when)
+				
+		// assert (then)
 	}
 
 	@Test
 	public void Sulfuras아이템_판매기간_마이너스1_품질5_테스트() {
-
+		
+		fail(); // 삭제
+		
+		// 실습
+		// arrange (given)
+				
+		// act (when)
+				
+		// assert (then)
 	}
 
 	@Test
 	public void AgedBrie아이템_판매기간0_품질55_테스트() {
-
+		
+		fail(); // 삭제
+		
+		// 실습
+		// arrange (given)
+				
+		// act (when)
+				
+		// assert (then)
 	}
 
 	@Test
 	public void BackstagePass아이템_판매기간0_품질49_테스트() {
-
+		
+		fail(); // 삭제
+		
+		// 실습
+		// arrange (given)
+				
+		// act (when)
+				
+		// assert (then)
 	}
 
 	@Test
 	public void AgedBrie아이템_판매기간2_품질0_테스트() {
+		
+		// arrange (given)
 		Item[] items = new Item[] { new Item(AGED_BRIE, 2, 0) };
 		GildedRose gildedRose = new GildedRose(items);
 
+		// act (when)
 		gildedRose.updateQuality();
 
+		// assert (then)
 		assertEquals(AGED_BRIE, items[0].name);
 		assertEquals(1, items[0].sellIn);
 		assertEquals(1, items[0].quality);
@@ -112,11 +186,15 @@ public class GildedRoseTest {
 
 	@Test
 	public void Normal아이템_판매기간2_품질0_테스트() {
+		
+		// arrange (given)
 		Item[] items = new Item[] { new Item(NORMAL_ITEM, 2, 0) };
 		GildedRose gildedRose = new GildedRose(items);
 
+		// act (when)
 		gildedRose.updateQuality();
 
+		// assert (then)
 		assertEquals(NORMAL_ITEM, items[0].name);
 		assertEquals(1, items[0].sellIn);
 		assertEquals(0, items[0].quality);
@@ -124,11 +202,15 @@ public class GildedRoseTest {
 
 	@Test
 	public void GildedRose_Item_toString_테스트() {
+		
+		// arrange (given)
 		Item[] items = new Item[] { new Item(NORMAL_ITEM, 0, 0) };
 		GildedRose gildedRose = new GildedRose(items);
 
+		// act (when)
 		String toString = items[0].toString();
 
+		// assert (then)
 		assertEquals("Normal Item, 0, 0", toString);
 	}
 }
