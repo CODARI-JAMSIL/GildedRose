@@ -91,8 +91,6 @@ public class GildedRoseTest {
 	@Test
 	public void BackstagePass아이템_판매기간0_품질0_테스트() {
 		
-		fail(); // 삭제
-		
 		// 같이 해보기
 		// arrange (given)
 		
@@ -104,8 +102,6 @@ public class GildedRoseTest {
 
 	@Test
 	public void BackstagePass아이템_판매기간0_품질51_테스트() {
-		
-		fail();  // 삭제
 		
 		// 같이 해보기
 		// arrange (given)
@@ -119,8 +115,6 @@ public class GildedRoseTest {
 	@Test
 	public void BackstagePass아이템_판매기간15_품질0_테스트() {
 		
-		fail();  // 삭제
-		
 		// 같이 해보기
 		// arrange (given)
 				
@@ -131,8 +125,6 @@ public class GildedRoseTest {
 
 	@Test
 	public void Sulfuras아이템_판매기간_마이너스1_품질5_테스트() {
-		
-		fail(); // 삭제
 		
 		// 실습
 		// arrange (given)
@@ -145,8 +137,6 @@ public class GildedRoseTest {
 	@Test
 	public void AgedBrie아이템_판매기간0_품질55_테스트() {
 		
-		fail(); // 삭제
-		
 		// 실습
 		// arrange (given)
 				
@@ -157,8 +147,6 @@ public class GildedRoseTest {
 
 	@Test
 	public void BackstagePass아이템_판매기간0_품질49_테스트() {
-		
-		fail(); // 삭제
 		
 		// 실습
 		// arrange (given)
