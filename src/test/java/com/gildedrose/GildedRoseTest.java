@@ -13,7 +13,7 @@ public class GildedRoseTest {
 
 	@Test
 	public void GildedRose_생성자_테스트() {
-		
+
 		// arrange (given)
 		Item[] items = new Item[] {};
 
@@ -26,7 +26,7 @@ public class GildedRoseTest {
 
 	@Test
 	public void Normal아이템_판매기간0_품질0_테스트() {
-		
+
 		// arrange (given)
 		Item[] items = new Item[] { new Item(NORMAL_ITEM, 0, 0) };
 		GildedRose gildedRose = new GildedRose(items);
@@ -42,7 +42,7 @@ public class GildedRoseTest {
 
 	@Test
 	public void Normal아이템_판매기간0_품질5_테스트() {
-		
+
 		// arrange (given)
 		Item[] items = new Item[] { new Item(NORMAL_ITEM, 0, 5) };
 		GildedRose gildedRose = new GildedRose(items);
@@ -58,7 +58,7 @@ public class GildedRoseTest {
 
 	@Test
 	public void Sulfuras아이템_판매기간0_품질5_테스트() {
-		
+
 		// arrange (given)
 		Item[] items = new Item[] { new Item(SULFURAS, 0, 5) };
 		GildedRose gildedRose = new GildedRose(items);
@@ -74,7 +74,7 @@ public class GildedRoseTest {
 
 	@Test
 	public void AgedBrie아이템_판매기간0_품질0_테스트() {
-		
+
 		// arrange (given)
 		Item[] items = new Item[] { new Item(AGED_BRIE, 0, 0) };
 		GildedRose gildedRose = new GildedRose(items);
@@ -90,75 +90,86 @@ public class GildedRoseTest {
 
 	@Test
 	public void BackstagePass아이템_판매기간0_품질0_테스트() {
-		
-		// 같이 해보기
+
 		// arrange (given)
-		
+		Item[] items = new Item[] { new Item(BACKSTAGE_PASS, 0, 0) };
+		GildedRose gildedRose = new GildedRose(items);
+
 		// act (when)
-		
+		gildedRose.updateQuality();
+
 		// assert (then)
-		
+		assertEquals(BACKSTAGE_PASS, items[0].name);
+		assertEquals(-1, items[0].sellIn);
+		assertEquals(0, items[0].quality);
+
 	}
 
 	@Test
 	public void BackstagePass아이템_판매기간0_품질51_테스트() {
-		
-		// 같이 해보기
+
+		// 같이 해보기 1
 		// arrange (given)
-				
+
 		// act (when)
-				
+
 		// assert (then)
-		
+
 	}
 
 	@Test
 	public void BackstagePass아이템_판매기간15_품질0_테스트() {
-		
-		// 같이 해보기
+
+		// 같이 해보기 2
 		// arrange (given)
-				
+
 		// act (when)
-				
+
 		// assert (then)
 	}
 
 	@Test
 	public void Sulfuras아이템_판매기간_마이너스1_품질5_테스트() {
-		
-		// 실습
+
+		// 실습 1
 		// arrange (given)
-				
+
 		// act (when)
-				
+
 		// assert (then)
 	}
 
 	@Test
 	public void AgedBrie아이템_판매기간0_품질55_테스트() {
-		
-		// 실습
+
+		// 실습 2
 		// arrange (given)
-				
+
 		// act (when)
-				
+
 		// assert (then)
+
 	}
 
 	@Test
 	public void BackstagePass아이템_판매기간0_품질49_테스트() {
-		
-		// 실습
+
 		// arrange (given)
-				
+		Item[] items = new Item[] { new Item(BACKSTAGE_PASS, 0, 49) };
+		GildedRose gildedRose = new GildedRose(items);
+
 		// act (when)
-				
+		gildedRose.updateQuality();
+
 		// assert (then)
+		assertEquals(BACKSTAGE_PASS, items[0].name);
+		assertEquals(-1, items[0].sellIn);
+		assertEquals(0, items[0].quality);
 	}
 
 	@Test
 	public void AgedBrie아이템_판매기간2_품질0_테스트() {
-		
+
 		// arrange (given)
 		Item[] items = new Item[] { new Item(AGED_BRIE, 2, 0) };
 		GildedRose gildedRose = new GildedRose(items);
@@ -174,7 +185,7 @@ public class GildedRoseTest {
 
 	@Test
 	public void Normal아이템_판매기간2_품질0_테스트() {
-		
+
 		// arrange (given)
 		Item[] items = new Item[] { new Item(NORMAL_ITEM, 2, 0) };
 		GildedRose gildedRose = new GildedRose(items);
@@ -190,7 +201,7 @@ public class GildedRoseTest {
 
 	@Test
 	public void GildedRose_Item_toString_테스트() {
-		
+
 		// arrange (given)
 		Item[] items = new Item[] { new Item(NORMAL_ITEM, 0, 0) };
 		GildedRose gildedRose = new GildedRose(items);
