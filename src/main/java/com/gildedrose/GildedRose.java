@@ -4,7 +4,7 @@ class GildedRose {
 	private static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
 	private static final String BACKSTAGE_PASS = "Backstage passes to a TAFKAL80ETC concert";
 	private static final String AGED_BRIE = "Aged Brie";
-	private static final int MAX_QUALITY = 50;
+	static final int MAX_QUALITY = 50;
 	Item[] items;
 
 	public GildedRose(Item[] items) {
@@ -15,73 +15,26 @@ class GildedRose {
 		for (int i = 0; i < items.length; i++) {
 			Item item = items[i];
 			if (item.name.equals(AGED_BRIE)) {
-				updateQuailityForAgedBrie(item);
+				AgedBrieItem agedBrieItem= new AgedBrieItem(item);
+				agedBrieItem.updateQuailityForAgedBrie();
 
 			} else if (item.name.equals(BACKSTAGE_PASS)) {
-				updateQualityForBackstagePass(item);
+				BackstagePassItem backstagePassItem= new BackstagePassItem(item);
+				backstagePassItem.updateQualityForBackstagePass();
 
 			} else if (item.name.equals(SULFURAS)) {
-				updateQualityForSulfuras();
+				SulfurasItem sulfurasItem= new SulfurasItem(item);
+				sulfurasItem.updateQualityForSulfuras();
 				
 			} else {
-				updateQualityForNormal(item);
+				NormalItem normalItem= new NormalItem(item);
+				normalItem.updateQualityForNormal();
 			}
 
 			if (item.name.equals(SULFURAS)) {
 				//
 			} else {
 				item.sellIn = item.sellIn - 1;
-			}
-		}
-	}
-
-	private void updateQualityForSulfuras() {
-		System.out.println("");
-	}
-
-	private void updateQualityForNormal(Item item) {
-		if (item.quality > 0) {
-			item.quality = item.quality - 1;
-		}
-
-		if (item.sellIn < 1) {
-			if (item.quality > 0) {
-				item.quality = item.quality - 1;
-			}
-		}
-	}
-
-	private void updateQualityForBackstagePass(Item item) {
-		if (item.quality < MAX_QUALITY) {
-			item.quality = item.quality + 1;
-
-			if (item.sellIn < 11) {
-				if (item.quality < MAX_QUALITY) {
-					item.quality = item.quality + 1;
-				}
-			}
-
-			if (item.sellIn < 6) {
-				if (item.quality < MAX_QUALITY) {
-					item.quality = item.quality + 1;
-				}
-			}
-
-		}
-
-		if (item.sellIn < 1) {
-			item.quality = item.quality - item.quality;
-		}
-	}
-
-	private void updateQuailityForAgedBrie(Item item) {
-		if (item.quality < MAX_QUALITY) {
-			item.quality = item.quality + 1;
-		}
-
-		if (item.sellIn < 1) {
-			if (item.quality < MAX_QUALITY) {
-				item.quality = item.quality + 1;
 			}
 		}
 	}
