@@ -137,7 +137,7 @@ public class GildedRoseTest {
 		// act (when)
 
 		// assert (then)
-	}
+	} 
 
 	@Test
 	public void AgedBrie아이템_판매기간0_품질55_테스트() {
